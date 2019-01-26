@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IncorrectID.swift
 //  stopWATCH
 //
 //  Created by Orlando Ortega on 2019-01-26.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class IncorrectIDViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
-

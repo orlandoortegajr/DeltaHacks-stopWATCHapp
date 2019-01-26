@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		4556540921FD00570043337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556540821FD00570043337E /* AppDelegate.swift */; };
-		4556540B21FD00570043337E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556540A21FD00570043337E /* ViewController.swift */; };
+		4556540B21FD00570043337E /* AuthenticateDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556540A21FD00570043337E /* AuthenticateDriver.swift */; };
 		4556540E21FD00570043337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4556540C21FD00570043337E /* Main.storyboard */; };
 		4556541021FD00590043337E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4556540F21FD00590043337E /* Assets.xcassets */; };
 		4556541321FD00590043337E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4556541121FD00590043337E /* LaunchScreen.storyboard */; };
+		455BA98E21FD1E46000F121F /* LinkDriverToTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */; };
+		455BA99021FD2990000F121F /* CorrectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA98F21FD2990000F121F /* CorrectID.swift */; };
+		455BA99221FD2A0C000F121F /* IncorrectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA99121FD2A0C000F121F /* IncorrectID.swift */; };
+		D85F154BCBD174B872FA5ECB /* Pods_stopWATCH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2565F8EB9AA9F10B298AE619 /* Pods_stopWATCH.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2565F8EB9AA9F10B298AE619 /* Pods_stopWATCH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stopWATCH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4556540521FD00570043337E /* stopWATCH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopWATCH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4556540821FD00570043337E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4556540A21FD00570043337E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4556540A21FD00570043337E /* AuthenticateDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateDriver.swift; sourceTree = "<group>"; };
 		4556540D21FD00570043337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4556540F21FD00590043337E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4556541221FD00590043337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4556541421FD00590043337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDriverToTruck.swift; sourceTree = "<group>"; };
+		455BA98F21FD2990000F121F /* CorrectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectID.swift; sourceTree = "<group>"; };
+		455BA99121FD2A0C000F121F /* IncorrectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncorrectID.swift; sourceTree = "<group>"; };
+		54E0CE30A58BEEC498CA70A0 /* Pods-stopWATCH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopWATCH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH.debug.xcconfig"; sourceTree = "<group>"; };
+		E21DA6B4E12054CA63CCFC6C /* Pods-stopWATCH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopWATCH.release.xcconfig"; path = "Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85F154BCBD174B872FA5ECB /* Pods_stopWATCH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05BE5AE7A9B6F2D9E63ECA97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54E0CE30A58BEEC498CA70A0 /* Pods-stopWATCH.debug.xcconfig */,
+				E21DA6B4E12054CA63CCFC6C /* Pods-stopWATCH.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		455653FC21FD00570043337E = {
 			isa = PBXGroup;
 			children = (
 				4556540721FD00570043337E /* stopWATCH */,
 				4556540621FD00570043337E /* Products */,
+				05BE5AE7A9B6F2D9E63ECA97 /* Pods */,
+				F68FE80E8CCE0FC932797065 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +77,24 @@
 			isa = PBXGroup;
 			children = (
 				4556540821FD00570043337E /* AppDelegate.swift */,
-				4556540A21FD00570043337E /* ViewController.swift */,
+				4556540A21FD00570043337E /* AuthenticateDriver.swift */,
+				455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */,
+				455BA98F21FD2990000F121F /* CorrectID.swift */,
+				455BA99121FD2A0C000F121F /* IncorrectID.swift */,
 				4556540C21FD00570043337E /* Main.storyboard */,
 				4556540F21FD00590043337E /* Assets.xcassets */,
 				4556541121FD00590043337E /* LaunchScreen.storyboard */,
 				4556541421FD00590043337E /* Info.plist */,
 			);
 			path = stopWATCH;
+			sourceTree = "<group>";
+		};
+		F68FE80E8CCE0FC932797065 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2565F8EB9AA9F10B298AE619 /* Pods_stopWATCH.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4556541721FD00590043337E /* Build configuration list for PBXNativeTarget "stopWATCH" */;
 			buildPhases = (
+				715AC1299999C2AFD4F6534E /* [CP] Check Pods Manifest.lock */,
 				4556540121FD00570043337E /* Sources */,
 				4556540221FD00570043337E /* Frameworks */,
 				4556540321FD00570043337E /* Resources */,
+				C5A8BB5905C836D94B177764 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +165,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		715AC1299999C2AFD4F6534E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-stopWATCH-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5A8BB5905C836D94B177764 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4556540121FD00570043337E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4556540B21FD00570043337E /* ViewController.swift in Sources */,
+				455BA98E21FD1E46000F121F /* LinkDriverToTruck.swift in Sources */,
+				455BA99021FD2990000F121F /* CorrectID.swift in Sources */,
+				4556540B21FD00570043337E /* AuthenticateDriver.swift in Sources */,
+				455BA99221FD2A0C000F121F /* IncorrectID.swift in Sources */,
 				4556540921FD00570043337E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,10 +357,11 @@
 		};
 		4556541821FD00590043337E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54E0CE30A58BEEC498CA70A0 /* Pods-stopWATCH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K48B6RJRHT;
 				INFOPLIST_FILE = stopWATCH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,10 +376,11 @@
 		};
 		4556541921FD00590043337E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E21DA6B4E12054CA63CCFC6C /* Pods-stopWATCH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K48B6RJRHT;
 				INFOPLIST_FILE = stopWATCH/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
