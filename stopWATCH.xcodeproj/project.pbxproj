@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4556540921FD00570043337E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556540821FD00570043337E /* AppDelegate.swift */; };
-		4556540B21FD00570043337E /* AuthenticateDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556540A21FD00570043337E /* AuthenticateDriver.swift */; };
 		4556540E21FD00570043337E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4556540C21FD00570043337E /* Main.storyboard */; };
 		4556541021FD00590043337E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4556540F21FD00590043337E /* Assets.xcassets */; };
 		4556541321FD00590043337E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4556541121FD00590043337E /* LaunchScreen.storyboard */; };
 		455BA98E21FD1E46000F121F /* LinkDriverToTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */; };
 		455BA99021FD2990000F121F /* CorrectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA98F21FD2990000F121F /* CorrectID.swift */; };
-		455BA99221FD2A0C000F121F /* IncorrectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA99121FD2A0C000F121F /* IncorrectID.swift */; };
 		D85F154BCBD174B872FA5ECB /* Pods_stopWATCH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2565F8EB9AA9F10B298AE619 /* Pods_stopWATCH.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,14 +20,12 @@
 		2565F8EB9AA9F10B298AE619 /* Pods_stopWATCH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stopWATCH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4556540521FD00570043337E /* stopWATCH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopWATCH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4556540821FD00570043337E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4556540A21FD00570043337E /* AuthenticateDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateDriver.swift; sourceTree = "<group>"; };
 		4556540D21FD00570043337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4556540F21FD00590043337E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4556541221FD00590043337E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4556541421FD00590043337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDriverToTruck.swift; sourceTree = "<group>"; };
 		455BA98F21FD2990000F121F /* CorrectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectID.swift; sourceTree = "<group>"; };
-		455BA99121FD2A0C000F121F /* IncorrectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncorrectID.swift; sourceTree = "<group>"; };
 		54E0CE30A58BEEC498CA70A0 /* Pods-stopWATCH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopWATCH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH.debug.xcconfig"; sourceTree = "<group>"; };
 		E21DA6B4E12054CA63CCFC6C /* Pods-stopWATCH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopWATCH.release.xcconfig"; path = "Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,10 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				4556540821FD00570043337E /* AppDelegate.swift */,
-				4556540A21FD00570043337E /* AuthenticateDriver.swift */,
 				455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */,
 				455BA98F21FD2990000F121F /* CorrectID.swift */,
-				455BA99121FD2A0C000F121F /* IncorrectID.swift */,
 				4556540C21FD00570043337E /* Main.storyboard */,
 				4556540F21FD00590043337E /* Assets.xcassets */,
 				4556541121FD00590043337E /* LaunchScreen.storyboard */,
@@ -131,6 +125,11 @@
 				TargetAttributes = {
 					4556540421FD00570043337E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -211,8 +210,6 @@
 			files = (
 				455BA98E21FD1E46000F121F /* LinkDriverToTruck.swift in Sources */,
 				455BA99021FD2990000F121F /* CorrectID.swift in Sources */,
-				4556540B21FD00570043337E /* AuthenticateDriver.swift in Sources */,
-				455BA99221FD2A0C000F121F /* IncorrectID.swift in Sources */,
 				4556540921FD00570043337E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

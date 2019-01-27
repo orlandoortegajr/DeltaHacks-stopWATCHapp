@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Nk-YS-N40">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,59 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Authenticate Driver View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthenticateDriverViewController" customModule="stopWATCH" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWq-7c-SiL">
-                                <rect key="frame" x="0.0" y="468" width="375" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.39478031229999999" green="0.48168406650000001" blue="0.87587246190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
-                                <state key="normal" title="LOGIN">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="LinkToTruckButton:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLS-t5-o0W"/>
-                                    <action selector="LinkToTruckPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0B-ci-WEe"/>
-                                    <action selector="LoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="piX-wr-jBw"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Driver ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3sK-OT-yAE">
-                                <rect key="frame" x="51" y="377" width="272" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="DriverIDField" destination="3sK-OT-yAE" id="Sr0-Ao-Jfk"/>
-                        <outlet property="LinkIDTextField" destination="3sK-OT-yAE" id="qhk-5n-owZ"/>
-                        <segue destination="2Nk-YS-N40" kind="show" identifier="TruckLink" id="8yQ-BM-iCy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
-        </scene>
         <!--Link Driver To Truck View Controller-->
         <scene sceneID="SxH-5b-yXG">
             <objects>
                 <viewController id="2Nk-YS-N40" customClass="LinkDriverToTruckViewController" customModule="stopWATCH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2j8-ug-lwB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsb-Hp-IKx">
-                                <rect key="frame" x="0.0" y="465" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="470" width="414" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.39478031229999999" green="0.48168406650000001" blue="0.87587246190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
@@ -70,14 +27,18 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="LinkToTruckButton:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VVo-Q3-eP4"/>
-                                    <action selector="LinkToTruckPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kdk-fA-ZvP"/>
-                                    <action selector="LoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8o-mh-BOm"/>
                                     <action selector="linkToTruckPressed:" destination="2Nk-YS-N40" eventType="touchUpInside" id="cUB-yE-Sxc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Truck ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lAW-LV-xqw">
-                                <rect key="frame" x="38" y="377" width="298" height="30"/>
+                                <rect key="frame" x="58" y="407" width="298" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Driver ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fCl-HW-7BB">
+                                <rect key="frame" x="58" y="353" width="298" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -88,37 +49,32 @@
                         <viewLayoutGuide key="safeArea" id="9Ms-hm-F84"/>
                     </view>
                     <connections>
+                        <outlet property="driverIDTextField" destination="fCl-HW-7BB" id="Mn8-uV-OwG"/>
                         <outlet property="truckIDTextField" destination="lAW-LV-xqw" id="sC2-J0-b40"/>
                         <segue destination="iWr-Tz-Xqb" kind="show" identifier="CorrectID" id="mrq-qh-t92"/>
-                        <segue destination="NvK-HR-SkT" kind="show" identifier="IncorrectID" id="evf-ZJ-Tvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6b-iy-rA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.60000000000002" y="26.53673163418291"/>
-        </scene>
-        <!--IncorrectID View Controller-->
-        <scene sceneID="tuk-Ya-0J9">
-            <objects>
-                <viewController id="NvK-HR-SkT" customClass="IncorrectIDViewController" customModule="stopWATCH" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OtR-wf-7AL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="0.44871040239726029" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="mU8-hl-gB4"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DK8-je-Apj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1797" y="290"/>
+            <point key="canvasLocation" x="852.17391304347836" y="26.086956521739133"/>
         </scene>
         <!--CorrectID View Controller-->
         <scene sceneID="F46-ai-MRG">
             <objects>
                 <viewController id="iWr-Tz-Xqb" customClass="CorrectIDViewController" customModule="stopWATCH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7g-uv-QIl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eYZ-UG-yYr">
+                                <rect key="frame" x="105" y="266" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="0.46430864726027399" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Sb-Js-Sj4"/>
                     </view>
