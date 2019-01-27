@@ -11,6 +11,7 @@ import Alamofire
 
 class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
     
+    //Ask for what should happen if a wrong ID is entered
     
     @IBOutlet weak var driverIDTextField: UITextField!
     @IBOutlet weak var truckIDTextField: UITextField!
@@ -26,6 +27,30 @@ class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
         driverIDTextField.delegate = self
     }
     
+    func raiseDriverAuthenticationAlert(){
+        let alert = UIAlertController(title: "Invalid Driver ID", message: "Driver ID was not entered, please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func raiseTruckAuthenticationAlert(){
+        let alert = UIAlertController(title: "Invalid Truck ID", message: "Truck ID was not entered, please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func raiseConnectionErrorAlert(){
+        let alert = UIAlertController(title: "Internet Connection Error", message: "Server could not be reached, please check your network connection", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func makeRequest(driverID: String, truckID: String){
         let urlString = "https://sigma-myth-229819.appspot.com/link"
         parameters = ["driverID": driverID, "truckID": truckID]
@@ -34,36 +59,31 @@ class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
         Alamofire.request(urlString, method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             switch response.result {
             case .success:
-                print(response)
                 
-                if let error = response.error{
-                    print(error)
-                    break
-                } else {
-                    //TODO: Confirm response in order to properly authenticate user
-  
-                    self.performSegue(withIdentifier: "CorrectID", sender: self)
-                }
+                print(response)
+                self.performSegue(withIdentifier: "CorrectID", sender: self)
                 
                 break
                 
             case .failure(let error):
+                self.raiseConnectionErrorAlert()
                 print(error)
-                
-                //TODO: Display error alert to user
             }
         }
     }
     
     func authenticateDriverAndTruck(){
-        if let truckID = truckIDTextField.text {
-            if let driverID = driverIDTextField.text{
+        if driverIDTextField.text != ""{
+            driverID = driverIDTextField.text!
+            if truckIDTextField.text != ""{
+                truckID = truckIDTextField.text!
+            
                 makeRequest(driverID: driverID, truckID: truckID)
             } else {
-                print("Driver text field is empty")
+                raiseTruckAuthenticationAlert()
             }
         } else {
-            print("Truck text field is empty")
+            raiseDriverAuthenticationAlert()
         }
     }
     
