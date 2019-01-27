@@ -11,10 +11,11 @@ import Alamofire
 
 class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
     
-    //Ask for what should happen if a wrong ID is entered
+    //TODO: Check Credentials
     
     @IBOutlet weak var driverIDTextField: UITextField!
     @IBOutlet weak var truckIDTextField: UITextField!
+    @IBOutlet weak var linkTruckButton: UIButton!
     
     var driverID = ""
     var truckID = ""
@@ -25,6 +26,13 @@ class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
         
         truckIDTextField.delegate = self
         driverIDTextField.delegate = self
+        
+        linkTruckButton.backgroundColor = UIColor.darkGray
+        linkTruckButton.layer.cornerRadius = 17
+        linkTruckButton.setTitleColor(UIColor.white, for: .normal)
+        linkTruckButton.layer.opacity = 0.85
+        linkTruckButton.layer.shadowColor = UIColor.black.cgColor
+        linkTruckButton.layer.shadowRadius = 6
     }
     
     func raiseDriverAuthenticationAlert(){
@@ -96,7 +104,9 @@ class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! CorrectIDViewController
         driverID = driverIDTextField.text!
+        truckID = truckIDTextField.text!
         vc.driverID = self.driverID
+        vc.truckID = self.truckID
     }
     
     //keyboard closes when return is pressed

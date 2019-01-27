@@ -12,15 +12,19 @@ import CoreLocation
 
 class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
     
-    //TODO: make sure location is being sent in the background
-    //TODO: fix so that driverID gets passed on to this viewController
     var driverID = ""
+    var truckID = ""
     var locationManager: CLLocationManager?
     var parameters: [String: Any]?
+    var buttonText = ""
+    
+    @IBOutlet weak var checkMarkImage: UIImageView!
+    @IBOutlet weak var circleImage: UIImageView!
+    
+    @IBOutlet weak var truckIDTextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
@@ -30,6 +34,33 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
         locationManager!.allowsBackgroundLocationUpdates = true
         locationManager!.pausesLocationUpdatesAutomatically = false
         locationManager?.distanceFilter = 5
+        
+        buttonText = "Truck ID#: " + truckID
+        
+        truckIDTextButton.setTitle(buttonText, for: UIControl.State.normal)
+        
+        checkMarkImage.tintColor = .green
+        circleImage.tintColor = .green1
+        
+    }
+    
+    func raiseLocationNotAcceptedAlert(){
+        let alert = UIAlertController(title: "Location Services Required", message: "Application cannot run without location, please tap Settings and enable location", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)! as URL, options: [:], completionHandler: nil)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(settingsAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func raiseConnectionErrorAlert(){
+        let alert = UIAlertController(title: "Internet Connection Error", message: "Server could not be reached, please check your network connection", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //confirms user accepted to be tracked
@@ -40,8 +71,7 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             //acceptance not received
             print("Location not accepted")
-            
-            //TODO: Alert if user selects not allowed
+            raiseLocationNotAcceptedAlert()
         }
     }
     
@@ -56,29 +86,20 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
     //makes server request, send server data
     func makeRequest(location: CLLocation){
         let urlString = "https://sigma-myth-229819.appspot.com/driverApi"
-        
-        print(driverID)
-        print(String(location.coordinate.latitude))
-        print(String(location.coordinate.longitude))
+    
         parameters = ["driverID": driverID, "lat": String(location.coordinate.latitude), "lon": String(location.coordinate.longitude)]
-        //TODO: Raise alert if driver ID could not be retrieved
-        
-        
-        
         
         Alamofire.request(urlString, method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             switch response.result {
             case .success:
                 print(response)
                 
-                //TODO: Alert user that location is being tracked
-                
                 break
                 
             case .failure(let error):
                 print(error)
                 
-                //TODO: Alert user that there was a communication error
+                self.raiseConnectionErrorAlert()
             }
         }
     }

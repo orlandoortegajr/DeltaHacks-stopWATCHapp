@@ -13,6 +13,7 @@
 		4556541321FD00590043337E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4556541121FD00590043337E /* LaunchScreen.storyboard */; };
 		455BA98E21FD1E46000F121F /* LinkDriverToTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */; };
 		455BA99021FD2990000F121F /* CorrectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BA98F21FD2990000F121F /* CorrectID.swift */; };
+		457BDD0821FD7CD00030EBF8 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BDD0721FD7CD00030EBF8 /* DesignTextField.swift */; };
 		D85F154BCBD174B872FA5ECB /* Pods_stopWATCH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2565F8EB9AA9F10B298AE619 /* Pods_stopWATCH.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		4556541421FD00590043337E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		455BA98D21FD1E46000F121F /* LinkDriverToTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDriverToTruck.swift; sourceTree = "<group>"; };
 		455BA98F21FD2990000F121F /* CorrectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectID.swift; sourceTree = "<group>"; };
+		457BDD0721FD7CD00030EBF8 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		54E0CE30A58BEEC498CA70A0 /* Pods-stopWATCH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopWATCH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH.debug.xcconfig"; sourceTree = "<group>"; };
 		E21DA6B4E12054CA63CCFC6C /* Pods-stopWATCH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stopWATCH.release.xcconfig"; path = "Pods/Target Support Files/Pods-stopWATCH/Pods-stopWATCH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 				4556540F21FD00590043337E /* Assets.xcassets */,
 				4556541121FD00590043337E /* LaunchScreen.storyboard */,
 				4556541421FD00590043337E /* Info.plist */,
+				457BDD0721FD7CD00030EBF8 /* DesignTextField.swift */,
 			);
 			path = stopWATCH;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				455BA98E21FD1E46000F121F /* LinkDriverToTruck.swift in Sources */,
 				455BA99021FD2990000F121F /* CorrectID.swift in Sources */,
 				4556540921FD00570043337E /* AppDelegate.swift in Sources */,
+				457BDD0821FD7CD00030EBF8 /* DesignTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
