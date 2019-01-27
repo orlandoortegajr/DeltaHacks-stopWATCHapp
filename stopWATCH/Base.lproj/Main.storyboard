@@ -51,7 +51,7 @@
                     <connections>
                         <outlet property="driverIDTextField" destination="fCl-HW-7BB" id="Mn8-uV-OwG"/>
                         <outlet property="truckIDTextField" destination="lAW-LV-xqw" id="sC2-J0-b40"/>
-                        <segue destination="iWr-Tz-Xqb" kind="show" identifier="CorrectID" id="mrq-qh-t92"/>
+                        <segue destination="iWr-Tz-Xqb" kind="presentation" identifier="CorrectID" id="mrq-qh-t92"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6b-iy-rA6" userLabel="First Responder" sceneMemberID="firstResponder"/>

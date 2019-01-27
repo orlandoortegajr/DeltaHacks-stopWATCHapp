@@ -41,8 +41,7 @@ class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
                     break
                 } else {
                     //TODO: Confirm response in order to properly authenticate user
-                    let vc = CorrectIDViewController()
-                    vc.driverID = driverID
+  
                     self.performSegue(withIdentifier: "CorrectID", sender: self)
                 }
                 
@@ -72,6 +71,12 @@ class LinkDriverToTruckViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func linkToTruckPressed(_ sender: Any) {
         authenticateDriverAndTruck()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! CorrectIDViewController
+        driverID = driverIDTextField.text!
+        vc.driverID = self.driverID
     }
     
     //keyboard closes when return is pressed

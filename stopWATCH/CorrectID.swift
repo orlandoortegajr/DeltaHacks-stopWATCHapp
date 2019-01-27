@@ -14,7 +14,7 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
     
     //TODO: make sure location is being sent in the background
     //TODO: fix so that driverID gets passed on to this viewController
-    var driverID = "12345"
+    var driverID = ""
     var locationManager: CLLocationManager?
     var parameters: [String: Any]?
     
@@ -24,10 +24,11 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
-        
         locationManager?.requestAlwaysAuthorization()
         
         locationManager?.startUpdatingLocation()
+        locationManager!.allowsBackgroundLocationUpdates = true
+        locationManager!.pausesLocationUpdatesAutomatically = false
         locationManager?.distanceFilter = 5
     }
     
@@ -56,7 +57,13 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
     func makeRequest(location: CLLocation){
         let urlString = "https://sigma-myth-229819.appspot.com/driverApi"
         
+        print(driverID)
+        print(String(location.coordinate.latitude))
+        print(String(location.coordinate.longitude))
         parameters = ["driverID": driverID, "lat": String(location.coordinate.latitude), "lon": String(location.coordinate.longitude)]
+        //TODO: Raise alert if driver ID could not be retrieved
+        
+        
         
         
         Alamofire.request(urlString, method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: nil).responseJSON { response in
