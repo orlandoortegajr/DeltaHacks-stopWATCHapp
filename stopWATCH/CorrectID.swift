@@ -40,7 +40,7 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
         truckIDTextButton.setTitle(buttonText, for: UIControl.State.normal)
         
         checkMarkImage.tintColor = .green
-        circleImage.tintColor = .green1
+        circleImage.tintColor = .green
         
     }
     
