@@ -12,7 +12,9 @@ import CoreLocation
 
 class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
     
-    var driverID: String?
+    //TODO: make sure location is being sent in the background
+    //TODO: fix so that driverID gets passed on to this viewController
+    var driverID = "12345"
     var locationManager: CLLocationManager?
     var parameters: [String: Any]?
     
@@ -26,7 +28,7 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
         locationManager?.requestAlwaysAuthorization()
         
         locationManager?.startUpdatingLocation()
-        locationManager?.distanceFilter = 4
+        locationManager?.distanceFilter = 5
     }
     
     //confirms user accepted to be tracked
@@ -37,24 +39,24 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             //acceptance not received
             print("Location not accepted")
+            
+            //TODO: Alert if user selects not allowed
         }
     }
     
     //updates user location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for currentLocation in locations{
-            print("New location is \(locations)")
+            print("New location is latitude: \(currentLocation.coordinate.latitude) and longitude: \(currentLocation.coordinate.longitude)")
             makeRequest(location: currentLocation)
         }
     }
     
+    //makes server request, send server data
     func makeRequest(location: CLLocation){
-        let urlString = "https://sigma-myth-229819.appspot.com/link"
-        if let driverID = driverID {
-            parameters = ["driverID": driverID, "lat": location.coordinate.latitude, "lon": location.coordinate.longitude]
-        } else {
-            print("Invalid driverID")
-        }
+        let urlString = "https://sigma-myth-229819.appspot.com/driverApi"
+        
+        parameters = ["driverID": driverID, "lat": String(location.coordinate.latitude), "lon": String(location.coordinate.longitude)]
         
         
         Alamofire.request(urlString, method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -62,14 +64,14 @@ class CorrectIDViewController: UIViewController, CLLocationManagerDelegate {
             case .success:
                 print(response)
                 
-                //TODO: Confirm response in order to properly authenticate user
-                
+                //TODO: Alert user that location is being tracked
                 
                 break
                 
             case .failure(let error):
                 print(error)
                 
+                //TODO: Alert user that there was a communication error
             }
         }
     }
